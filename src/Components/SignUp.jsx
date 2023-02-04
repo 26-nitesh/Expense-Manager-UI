@@ -3,6 +3,7 @@ import { useState } from 'react';
 import * as yup from 'yup';
 import { Button, Card, Col, Form, FormControl, FormGroup, FormLabel, Row } from 'react-bootstrap';
 import './Login.css'
+import { register } from '../Services/UserService';
 // import '../App.css';
 
 const SignUP =()=>{
@@ -28,6 +29,9 @@ const SignUP =()=>{
               validationSchema:signupValidation,
               onSubmit:(values)=>{
                 console.log(values);
+                register(values).then(()=>{
+                    console.log("okk");
+                })
                 signupFormik.resetForm();
               }
          }

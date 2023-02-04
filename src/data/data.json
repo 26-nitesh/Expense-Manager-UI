@@ -1,0 +1,18 @@
+{
+  "user": [
+    {
+      "userName": "Nitesh",
+      "email": "n@gmail.com",
+      "mobile": "754444",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "userName": "Manish",
+      "email": "m@g",
+      "mobile": "1234",
+      "password": "123",
+      "id": 2
+    }
+  ]
+}

@@ -2,24 +2,26 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { Button, Card, Col, Form, FormControl, FormGroup, FormLabel, Row } from 'react-bootstrap';
 import './Login.css'
+import { login } from '../Services/UserService';
 // import '../App.css';
 
 const Login =()=>{
    
 const validationLogin=yup.object(
     {
-        userName:yup.string().required("required Field"),
+        email:yup.string().required("required Field"),
         password:yup.string().required('cannot be empty')
     }
 )
     const loginFormik = useFormik(
         {
             initialValues:{
-                userName:"",
+                email:"",
                 password:"",
             },
             validationSchema:validationLogin,
             onSubmit:(values)=>{
+                login(values)
                 console.log(values);
                 loginFormik.resetForm();
             }
@@ -34,12 +36,12 @@ const validationLogin=yup.object(
         <Form onSubmit={loginFormik.handleSubmit}>
           <FormGroup>
           <FormLabel className='mt-5'>
-        UserName/mobile
+        Email/mobile
         </FormLabel>
-          <FormControl type='text' name='userName' value={loginFormik.values.userName} error={loginFormik.touched.userName && Boolean(!loginFormik.errors.userName)} onChange={loginFormik.handleChange}>
+          <FormControl type='text' name='email' value={loginFormik.values.email} error={loginFormik.touched.email && Boolean(!loginFormik.errors.email)} onChange={loginFormik.handleChange}>
  </FormControl>
       <Form.Text className="text-danger">
-        {loginFormik.errors.userName}
+        {loginFormik.errors.email}
         </Form.Text>
         </FormGroup>
         <FormGroup>
@@ -50,7 +52,7 @@ const validationLogin=yup.object(
 
             </FormControl>
             <Form.Text className="text-danger">
-        {loginFormik.errors.userName}
+        {loginFormik.errors.password}
         </Form.Text>
         </FormGroup>
         <FormGroup>
