@@ -39,7 +39,7 @@ const validationLogin=yup.object(
           <FormControl type='text' name='userName' value={loginFormik.values.userName} error={loginFormik.touched.userName && Boolean(!loginFormik.errors.userName)} onChange={loginFormik.handleChange}>
  </FormControl>
       <Form.Text className="text-danger">
-        {signupFormik.errors.userName}
+        {loginFormik.errors.userName}
         </Form.Text>
         </FormGroup>
         <FormGroup>
@@ -50,7 +50,7 @@ const validationLogin=yup.object(
 
             </FormControl>
             <Form.Text className="text-danger">
-        {signupFormik.errors.userName}
+        {loginFormik.errors.userName}
         </Form.Text>
         </FormGroup>
         <FormGroup>
