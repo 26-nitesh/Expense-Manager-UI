@@ -3,10 +3,11 @@ import * as yup from 'yup';
 import { Button, Card, Col, Form, FormControl, FormGroup, FormLabel, Row } from 'react-bootstrap';
 import './Login.css'
 import { login } from '../Services/UserService';
+import { useNavigate } from 'react-router';
 // import '../App.css';
 
 const Login =()=>{
-   
+    const navigate =useNavigate();
 const validationLogin=yup.object(
     {
         email:yup.string().required("required Field"),
@@ -20,9 +21,12 @@ const validationLogin=yup.object(
                 password:"",
             },
             validationSchema:validationLogin,
-            onSubmit:(values)=>{
-                login(values)
-                console.log(values);
+            onSubmit:async (values)=>{
+             const response =await  login(values)
+             if(response.status==100){
+              navigate('/dashboard')
+             }
+               console.log(response);
                 loginFormik.resetForm();
             }
         }

@@ -16,17 +16,19 @@ export const register=  (user)=>{
 
 
 export const login= async (user)=>{
-    const uri='http://localhost:4000/user?userName='+user.email;
-    const response= await findUserByField(uri);
-    if(response.data.length==0){
-         uri='http://localhost:4000/user?mobile='+user.email;
-         response = await findUserByField(uri)
-         console.log(response.data);
+    const response= await findUserByField(user.email);
+    if(response.data[0].password==user.password){
+        RESPONSE.status=100
+        RESPONSE.msg='Login Sucess'
+        RESPONSE.user=response.data[0].userName;
     }
+    return RESPONSE
 }
 
-async function  findUserByField(uri){
+async function  findUserByField(field){
+    const uri='http://localhost:4000/user?email='+field;
     try{
+        console.log(uri);
         const response = await axios.get(uri);
        return response;
     }catch{
