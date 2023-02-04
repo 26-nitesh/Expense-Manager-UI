@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Button, Card, Col, Form, FormControl, FormGroup, FormLabel, Row } from 'react-bootstrap';
-import '../App.css';
+import './Login.css'
+// import '../App.css';
+
 const Login =()=>{
   const [user,setUser]=useState({
     userName:"",
@@ -19,12 +21,12 @@ const Login =()=>{
   <Row>
     <Col>
       <Card style={{width:'40rem',height:'500px',margin:'120px',position:'absolute'}}>
-        <div className='border border-dark mt-5 p-5 mb-5' style={{marginLeft:'90px',width:'400px'}}>
+        <div className='border border-dark mt-5 p-5 mb-5' style={{marginLeft:'90px',width:'500px'}}>
         <h2 className='text-center'>Login Here</h2>
         <Form onSubmit={c}>
           <FormGroup>
           <FormLabel className='mt-5'>
-        UserName
+        UserName/mobile
         </FormLabel>
           <FormControl type='text' name='userName' onChange={handleOnChange}>
  </FormControl>
@@ -40,6 +42,7 @@ const Login =()=>{
         <FormGroup>
           <Button className='bg-pimary mt-3' type='submit'>Login</Button>
           <Button className='bg-warning mt-3 mx-4' type='reset'>Reset</Button>
+          <a href='/sign-up'>Don't have Account ?SignUP</a>
         </FormGroup>
         </Form>
         </div>
