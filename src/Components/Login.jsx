@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button, Card, Col, Form, FormControl, FormGroup, FormLabel, Row } from 'react-bootstrap';
 import '../App.css';
-const Home =()=>{
+const Login =()=>{
   const [user,setUser]=useState({
     userName:"",
     password:""
