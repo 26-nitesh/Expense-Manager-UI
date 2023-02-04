@@ -1,5 +1,7 @@
 import { Button } from 'react-bootstrap'
 const DashBoard=()=>{
+    const email=localStorage.getItem('user')
+    console.log(email);
 return(
   <div className="d-flex justify-content-center mt-5">
   <h2>DASH BOARD</h2><br></br>

@@ -24,6 +24,7 @@ const validationLogin=yup.object(
             onSubmit:async (values)=>{
              const response =await  login(values)
              if(response.status==100){
+                localStorage.setItem("user",response.email)
               navigate('/dashboard')
              }
                console.log(response);
