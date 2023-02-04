@@ -1,10 +1,20 @@
 import { useFormik } from 'formik';
 import { useState } from 'react';
+import * as yup from 'yup';
 import { Button, Card, Col, Form, FormControl, FormGroup, FormLabel, Row } from 'react-bootstrap';
 import './Login.css'
 // import '../App.css';
 
 const SignUP =()=>{
+
+    const signupValidation = yup.object(
+        {
+          userName:yup.string().required("required !!"),
+          email:yup.string().required("required !!"),
+          mobile:yup.number().required("phone  can be only number and is required !!"),
+          password:yup.string().required("required !!")
+        }
+      )
 
     const signupFormik = useFormik(
          {
@@ -14,6 +24,11 @@ const SignUP =()=>{
                 mobile:"",
                 password:"",
 
+              },
+              validationSchema:signupValidation,
+              onSubmit:(values)=>{
+                console.log(values);
+                signupFormik.resetForm();
               }
          }
 
@@ -29,32 +44,43 @@ const SignUP =()=>{
               <FormLabel className='mt-5'>
             UserName
             </FormLabel>
-              <FormControl type='text' name='userName' onChange={signupFormik.handleChange}>
+              <FormControl type='text' name='userName' value={signupFormik.values.userName} error={signupFormik.touched.userName && Boolean(!signupFormik.errors.userName)} onChange={signupFormik.handleChange}>
      </FormControl>
+     <Form.Text className="text-danger">
+        {signupFormik.errors.userName}
+        </Form.Text>
      <FormGroup>
               <FormLabel className='mt-3'>
             Email
             </FormLabel>
-              <FormControl type='email' name='email' onChange={signupFormik.handleChange}>
+              <FormControl type='email' name='email' value={signupFormik.values.email} error={signupFormik.touched.email && Boolean(!signupFormik.errors.email)} onChange={signupFormik.handleChange}>
     
                 </FormControl>
+                <Form.Text className="text-danger">
+        {signupFormik.errors.email}
+        </Form.Text>
             </FormGroup>
             <FormGroup>
               <FormLabel className='mt-3'>
             Phone
             </FormLabel>
-              <FormControl type='text' name='mobile' onChange={signupFormik.handleChange}>
-    
-                </FormControl>
+              <FormControl type='text' name='mobile' value={signupFormik.values.mobile} error={signupFormik.touched.mobile && Boolean(!signupFormik.errors.mobile)} onChange={signupFormik.handleChange}>
+    </FormControl>
+    <Form.Text className="text-danger">
+        {signupFormik.errors.mobile}
+        </Form.Text>
             </FormGroup>
             </FormGroup>
             <FormGroup>
               <FormLabel className='mt-3'>
             Password
             </FormLabel>
-              <FormControl type='text' name='password' onChange={signupFormik.handleChange}>
+              <FormControl type='text' name='password' value={signupFormik.values.password} error={signupFormik.touched.password && Boolean(!signupFormik.errors.password)} onChange={signupFormik.handleChange}>
     
                 </FormControl>
+                <Form.Text className="text-danger">
+        {signupFormik.errors.password}
+        </Form.Text>
             </FormGroup>
             <FormGroup>
               <Button className='bg-pimary mt-3' type='submit'>Register</Button>
