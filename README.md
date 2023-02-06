@@ -32,7 +32,12 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run eject`
 
 ### 'npm run data'
+<<<<<<< HEAD
 mandatory to start your start data server
+=======
+
+its mandatory to start your json server
+>>>>>>> 5e37130b60ed32b7b0e83131762106913f510878
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
