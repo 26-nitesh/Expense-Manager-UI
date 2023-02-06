@@ -32,7 +32,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run eject`
 
 ### 'npm run data'
-<<<<<<< HEAD
+
 mandatory to start your start data server
 =======
 
