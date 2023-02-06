@@ -31,6 +31,7 @@ const SignUP =()=>{
                 console.log(values);
                 register(values).then(()=>{
                     console.log("okk");
+                    alert('registered sucessfuly kindly login')
                 })
                 signupFormik.resetForm();
               }
@@ -79,7 +80,7 @@ const SignUP =()=>{
               <FormLabel className='mt-3'>
             Password
             </FormLabel>
-              <FormControl type='text' name='password' value={signupFormik.values.password} error={signupFormik.touched.password && Boolean(!signupFormik.errors.password)} onChange={signupFormik.handleChange}>
+              <FormControl type='password' name='password' value={signupFormik.values.password} error={signupFormik.touched.password && Boolean(!signupFormik.errors.password)} onChange={signupFormik.handleChange}>
     
                 </FormControl>
                 <Form.Text className="text-danger">

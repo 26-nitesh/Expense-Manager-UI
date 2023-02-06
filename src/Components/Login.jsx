@@ -24,8 +24,11 @@ const validationLogin=yup.object(
             onSubmit:async (values)=>{
              const response =await  login(values)
              if(response.status==100){
-                localStorage.setItem("user",response.email)
+                localStorage.setItem("user",response.user);
+                localStorage.setItem('email',response.email);
               navigate('/dashboard')
+             }else{
+               alert('not found')
              }
                console.log(response);
                 loginFormik.resetForm();
@@ -33,9 +36,9 @@ const validationLogin=yup.object(
         }
     )
     return (
-  <Row>
+    <Row>
     <Col>
-      <Card style={{width:'40rem',height:'500px',margin:'120px',position:'absolute'}}>
+      <Card className='mt-5 my-1' style={{width:'40rem',height:'500px',margin:'120px',position:'absolute'}}>
         <div className='border border-dark mt-5 p-5 mb-5' style={{marginLeft:'90px',width:'500px'}}>
         <h2 className='text-center'>Login Here</h2>
         <Form onSubmit={loginFormik.handleSubmit}>

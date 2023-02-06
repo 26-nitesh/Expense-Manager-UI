@@ -4,6 +4,7 @@ const RESPONSE={
     status:0,
     msg:'',
     user:'',
+    email:'',
 }
 export const register=  (user)=>{
 
@@ -21,6 +22,7 @@ export const login= async (user)=>{
         RESPONSE.status=100
         RESPONSE.msg='Login Sucess'
         RESPONSE.user=response.data[0].userName;
+        RESPONSE.email=response.data[0].email;
     }
     return RESPONSE
 }

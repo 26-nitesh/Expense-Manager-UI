@@ -13,9 +13,117 @@
       "mobile": "1234",
       "password": "123",
       "id": 2
+    },
+    {
+      "userName": "admin",
+      "email": "admin@admin",
+      "mobile": "233344",
+      "password": "123",
+      "id": 3
+    },
+    {
+      "userName": "test",
+      "email": "test@test",
+      "mobile": "1234",
+      "password": "1234",
+      "id": 4
+    },
+    {
+      "userName": "user@user",
+      "email": "user@user",
+      "mobile": "786524",
+      "password": "3333",
+      "id": 5
     }
   ],
-  "expences":[
-
+  "expences": [
+    {
+      "email": "m@g",
+      "catagory": "new",
+      "date": "12/12/2022",
+      "amount": "564",
+      "remarks": "rem",
+      "id": 1
+    },
+    {
+      "email": "m@g",
+      "catagory": "",
+      "date": "",
+      "amount": "",
+      "remarks": "",
+      "id": 2
+    },
+    {
+      "email": "m@g",
+      "catagory": "",
+      "date": "",
+      "amount": "",
+      "remarks": "",
+      "id": 3
+    },
+    {
+      "email": "m@g",
+      "catagory": "",
+      "date": "",
+      "amount": "",
+      "remarks": "",
+      "id": 4
+    },
+    {
+      "email": "m@g",
+      "catagory": "",
+      "date": "",
+      "amount": "",
+      "remarks": "",
+      "id": 5
+    },
+    {
+      "email": "m@g",
+      "catagory": "hhj",
+      "date": "hjhj",
+      "amount": "gfgf",
+      "remarks": "7676hg",
+      "id": 6
+    },
+    {
+      "email": "admin@admin",
+      "catagory": "abcd",
+      "date": "12/112/2344",
+      "amount": "343",
+      "remarks": "rem",
+      "id": 7
+    },
+    {
+      "email": "admin@admin",
+      "catagory": "yui",
+      "date": "67yy",
+      "amount": "nnb",
+      "remarks": "nmnm",
+      "id": 8
+    },
+    {
+      "email": "admin@admin",
+      "catagory": "lll",
+      "date": "kkk",
+      "amount": "nn",
+      "remarks": "nn",
+      "id": 9
+    },
+    {
+      "email": "admin@admin",
+      "catagory": "qww",
+      "date": "2023-02-10",
+      "amount": "qq",
+      "remarks": "qq",
+      "id": 10
+    },
+    {
+      "email": "user@user",
+      "catagory": "abc",
+      "date": "2023-02-05",
+      "amount": "1200",
+      "remarks": "re",
+      "id": 11
+    }
   ]
 }
